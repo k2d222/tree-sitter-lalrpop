@@ -35,8 +35,9 @@
   "::"
   "->"
   "&"
-  "#"
 ] @operator
+
+"#" @punctuation.special
 
 (condition_op) @operator
 (repeat_op) @operator
@@ -66,7 +67,7 @@
 (macro_identifier) @function.macro
 
 ; Symbol references
-(nonterminal_ref (identifier) @variable)
+(nonterminal_ref (identifier) @type)
 (named_symbol name: (identifier) @variable.parameter)
 
 ; Types
@@ -74,15 +75,20 @@
 (path (identifier) @type)
 (lifetime) @label
 
+; extern enum token conversions: the terminal being mapped is a token type
+(conversion
+  from: (terminal (identifier) @type))
+
+; Attributes: `#[cfg(feature = "imports")]`
+(attribute) @attribute
+(shebang_attribute) @attribute
+(attribute_inner (identifier) @function.macro)
+
 ; Literals
 (string_literal) @string
 (regex_literal) @string.regexp
 (char_literal) @character
 (escape) @string.escape
-
-; Attributes
-(attribute) @attribute
-(shebang_attribute) @attribute
 
 ; Comments
 (line_comment) @comment
