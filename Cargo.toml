@@ -1,18 +1,24 @@
 [package]
-authors = [ "Mathis Brossier <mathis.brossier@gmail.com>" ]
-autoexamples = false
-categories = [ "parser-implementations", "parsing", "text-editors" ]
-description = "tree-sitter grammar for LALRPOP"
-edition = "2024"
-keywords = [ "incremental", "parsing", "tree-sitter", "lalrpop" ]
-license = "MIT"
 name = "tree-sitter-lalrpop"
+version = "0.1.0"
+edition = "2024"
+description = "LALRPOP grammar for tree-sitter"
 readme = "README.md"
 repository = "https://github.com/k2d222/tree-sitter-lalrpop"
-version = "0.1.0"
+license = "MIT"
+keywords = ["incremental", "lalrpop", "parsing", "tree-sitter"]
+categories = ["parser-implementations", "parsing", "text-editors"]
+autoexamples = false
 
 build = "bindings/rust/build.rs"
-include = [ "bindings/rust/*", "grammar.js", "queries/*", "src/*", "tree-sitter.json", "/LICENSE" ]
+include = [
+  "/LICENSE",
+  "bindings/rust/*",
+  "grammar.js",
+  "queries/*",
+  "src/*",
+  "tree-sitter.json"
+]
 
 [lib]
 path = "bindings/rust/lib.rs"
@@ -20,8 +26,8 @@ path = "bindings/rust/lib.rs"
 [dependencies]
 tree-sitter-language = "0.1"
 
-[build-dependencies]
-cc = "1.2"
-
 [dev-dependencies]
 tree-sitter = "0.27.0"
+
+[build-dependencies]
+cc = "1.2"

@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.13)
 
 project(tree-sitter-lalrpop
         VERSION "0.1.0"
-        DESCRIPTION "tree-sitter grammar for LALRPOP"
+        DESCRIPTION "LALRPOP grammar for tree-sitter"
         HOMEPAGE_URL "https://github.com/k2d222/tree-sitter-lalrpop"
         LANGUAGES C)
 

@@ -1,29 +1,27 @@
-[build-system]
-build-backend = "setuptools.build_meta"
-requires = [ "setuptools>=62.4.0", "wheel" ]
-
 [project]
-authors = [ { email = "mathis.brossier@gmail.com", name = "Mathis Brossier" } ]
+name = "tree-sitter-lalrpop"
+version = "0.1.0"
+description = "LALRPOP grammar for tree-sitter"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "Mathis Brossier", email = "mathis.brossier@gmail.com" }]
+keywords = ["incremental", "lalrpop", "parsing", "tree-sitter"]
 classifiers = [
   "Intended Audience :: Developers",
   "Topic :: Software Development :: Compilers",
   "Topic :: Text Processing :: Linguistic",
   "Typing :: Typed",
 ]
-description = "tree-sitter grammar for LALRPOP"
-keywords = [ "incremental", "parsing", "tree-sitter", "lalrpop" ]
-license.text = "MIT"
-name = "tree-sitter-lalrpop"
-readme = "README.md"
-requires-python = ">=3.10"
-version = "0.1.0"
 
 [project.urls]
-Funding = ""
 Homepage = "https://github.com/k2d222/tree-sitter-lalrpop"
 
 [project.optional-dependencies]
-core = [ "tree-sitter~=0.24" ]
+core = ["tree-sitter~=0.24"]
+
+[build-system]
+requires = ["setuptools>=62.4.0", "wheel"]
+build-backend = "setuptools.build_meta"
 
 [tool.cibuildwheel]
 build = "cp310-*"

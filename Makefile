@@ -1,7 +1,7 @@
 LANGUAGE_NAME := tree-sitter-lalrpop
 HOMEPAGE_URL := https://github.com/k2d222/tree-sitter-lalrpop
 VERSION := 0.1.0
-DESCRIPTION := tree-sitter grammar for LALRPOP
+DESCRIPTION := LALRPOP grammar for tree-sitter
 
 # repository
 SRC_DIR := src
