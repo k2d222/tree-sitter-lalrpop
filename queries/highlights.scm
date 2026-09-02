@@ -64,6 +64,10 @@
 (nonterminal
   name: (nonterminal_name name: (identifier) @function))
 
+; Macro type parameters in a rule definition: `Comma1<T>`
+(nonterminal_name
+  parameter: (identifier) @type)
+
 (macro_identifier) @function.macro
 
 ; Symbol references
@@ -74,6 +78,9 @@
 (nominal_type (path (identifier) @type))
 (path (identifier) @type)
 (lifetime) @label
+
+; Associated type declarations: `type Location = usize;`
+(associated_type (identifier) @type)
 
 ; extern enum token conversions: the terminal being mapped is a token type
 (conversion
